@@ -35,14 +35,7 @@ h2 {
     font-weight: 600;
     font-size: 18px;
 }
-#question {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-#options {
-    display: flex;
-    flex-direction: column;
-}
+
 .answer-btn {
     font-size: 1.2rem;
     padding: 10px;
@@ -55,4 +48,23 @@ h2 {
     font-weight: 500;
     width: 100%;
     text-align: left;
+    transition: all 0.3s;
+}
+.answer-btn:hover {
+    background: #222;
+    color: #fff;
+}   
+
+#next-btn {
+    background: #001e4d;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 20px auto 0;
+    font-weight: 500;
+    width: 150px;
+    display: none;
 }
