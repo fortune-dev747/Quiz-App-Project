@@ -37,7 +37,11 @@ const questions = [
     }
 ];
 
-const questionElement = document.querySelector('[data-question]');
+const questionElement = document.getElementById("question");
+const option0 = document.getElementById("option0");
+const option1 = document.getElementById("option1");
+const option2 = document.getElementById("option2");
+const option3 = document.getElementById("option3");
 
 window.onload = function () {
     setQuestion();
