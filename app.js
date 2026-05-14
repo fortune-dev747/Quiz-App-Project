@@ -26,7 +26,7 @@ const questions = [
             { text: "D. unshift()", correct: false }
         ]
     },
- {
+    {
         question: "4. What does a search bar help users do on a website?",
         answers: [
             { text: "A. Increase internet speed", correct: false },
@@ -43,36 +43,63 @@ const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 const option3 = document.getElementById("option3");
 const nextQuestionButton = document.getElementById("next-btn");
+const restartQuizButton = document.getElementById("restart-btn");
 
+let currentQuestionIndex = 0;
 let answers = "";
 let options = [];
 
 window.onload = function () {
-    setQuestion();
+    showQuestion();
     option0.addEventListener("click", selectOption);
     option1.addEventListener("click", selectOption);
     option2.addEventListener("click", selectOption);
     option3.addEventListener("click", selectOption);
     nextQuestionButton.addEventListener("click", () => {
-    option0.style.backgroundColor = "";
-    option1.style.backgroundColor = "";
-    option2.style.backgroundColor = "";
-    option3.style.backgroundColor = "";
-    // Re-enable options for the next question
-    option0.disabled = false;
-    option1.disabled = false;
-    option2.disabled = false;
-    option3.disabled = false;
-    nextQuestionButton.style.display = "none";
-    setQuestion();
-});
+        option0.style.backgroundColor = "";
+        option1.style.backgroundColor = "";
+        option2.style.backgroundColor = "";
+        option3.style.backgroundColor = "";
+        // Re-enable options for the next question
+        option0.disabled = false;
+        option1.disabled = false;
+        option2.disabled = false;
+        option3.disabled = false;
+        nextQuestionButton.style.display = "none";
+        
+        // Move to next question
+        currentQuestionIndex++;
+        
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            // Quiz completed
+            questionElement.innerText = "Quiz Completed! 🎉";
+            option0.style.display = "none";
+            option1.style.display = "none";
+            option2.style.display = "none";
+            option3.style.display = "none";
+            nextQuestionButton.style.display = "none";
+            restartQuizButton.style.display = "block";
+            restartQuizButton.addEventListener("click", () => {
+                currentQuestionIndex = 0;
+                showQuestion();
+                option0.style.display = "block";
+                option1.style.display = "block";
+                option2.style.display = "block";
+                option3.style.display = "block";
+                nextQuestionButton.style.display = "block";
+                restartQuizButton.style.display = "none";
+            });
+        }
+    });
 }
 
-function setQuestion() {
-    const currentQuestion = questions[Math.floor(Math.random() * questions.length)];
+function showQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
     questionElement.innerText = currentQuestion.question;
     options = currentQuestion.answers;
-   const answers = options[Math.floor(Math.random() * options.length)];
+    
     option0.innerText = options[0].text;
     option1.innerText = options[1].text;
     option2.innerText = options[2].text;
@@ -89,10 +116,15 @@ function selectOption() {
         this.style.backgroundColor = "#9aeabc";
     } else {
         this.style.backgroundColor = "#ff9393";
+        // Also highlight the correct answer
+        const correctOption = options.find(option => option.correct);
+        if (option0.innerText === correctOption.text) option0.style.backgroundColor = "#9aeabc";
+        if (option1.innerText === correctOption.text) option1.style.backgroundColor = "#9aeabc";
+        if (option2.innerText === correctOption.text) option2.style.backgroundColor = "#9aeabc";
+        if (option3.innerText === correctOption.text) option3.style.backgroundColor = "#9aeabc";
     }
     nextQuestionButton.style.display = "block";
-};
-
+}
 
 
 
