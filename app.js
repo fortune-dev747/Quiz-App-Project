@@ -48,21 +48,25 @@ let options = [];
 
 window.onload = function () {
     setQuestion();
+    option0.addEventListener("click", selectOption);
+    option1.addEventListener("click", selectOption);
+    option2.addEventListener("click", selectOption);
+    option3.addEventListener("click", selectOption);
 }
 
 function setQuestion() {
     const currentQuestion = questions[Math.floor(Math.random() * questions.length)];
     questionElement.innerText = currentQuestion.question;
     options = currentQuestion.answers;
-    answers = options[Math.floor(Math.random() * options.length)];
+   const answers = options[Math.floor(Math.random() * options.length)];
     option0.innerText = options[0].text;
     option1.innerText = options[1].text;
     option2.innerText = options[2].text;
     option3.innerText = options[3].text;
-    option0.value = options[0].correct;
-    option1.value = options[1].correct;
-    option2.value = options[2].correct;
-    option3.value = options[3].correct;
+}
+
+function selectOption() {
+    
 }
 
 
