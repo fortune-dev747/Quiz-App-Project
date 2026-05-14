@@ -38,4 +38,20 @@ const questions = [
 ];
 
 const questionElement = document.getElementById("question");
+const answerButtons = document.querySelectorAll(".answer-btn");
+const nextButton = document.getElementById("next-btn");
+
+window.onload = function () {
+    setQuestion();
+}
+
+function setQuestion() {
+    const currentQuestion = questions[Math.floor(Math.random() * questions.length)];
+    questionElement.innerText = currentQuestion.question;
+}
+
+
+
+
+
 
