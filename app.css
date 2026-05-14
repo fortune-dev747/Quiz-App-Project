@@ -25,6 +25,7 @@ h1 {
     color:#001e4d;
     font-weight: 600;
     padding-bottom: 30px;
+    text-align: left;
 }
 #quiz-container {
     padding: 20px 0;
@@ -34,6 +35,7 @@ h2 {
     color: #001e4d;
     font-weight: 600;
     font-size: 18px;
+    text-align: left;
 }
 
 .answer-btn {

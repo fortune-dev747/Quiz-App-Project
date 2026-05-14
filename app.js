@@ -1,6 +1,6 @@
 const questions = [
     {
-        question: "What does HTML stand for?",
+        question: "1. What does HTML stand for?",
         answers: [
             { text: "A. HighText Machine Language", correct: false },
             { text: "B. HyperText Markup Language", correct: true },
@@ -9,7 +9,7 @@ const questions = [
         ]
     },
     {
-        question: "What is the purpose of CSS?",
+        question: "2. What is the purpose of CSS?",
         answers: [
             { text: "A. To style and layout web pages", correct: true },
             { text: "B. To create interactive web applications", correct: false },
@@ -18,7 +18,7 @@ const questions = [
         ]
     },
     {
-        question: "Which JavaScript method adds an item to the end of an array?",
+        question: "3. Which JavaScript method adds an item to the end of an array?",
         answers: [
             { text: "A. push()", correct: true },
             { text: "B. pop()", correct: false },
@@ -27,7 +27,7 @@ const questions = [
         ]
     },
  {
-        question: "What does a search bar help users do on a website?",
+        question: "4. What does a search bar help users do on a website?",
         answers: [
             { text: "A. Increase internet speed", correct: false },
             { text: "B. Download the entire website", correct: false },
@@ -54,6 +54,10 @@ window.onload = function () {
     option2.addEventListener("click", selectOption);
     option3.addEventListener("click", selectOption);
     nextQuestionButton.addEventListener("click", () => {
+    option0.style.backgroundColor = "";
+    option1.style.backgroundColor = "";
+    option2.style.backgroundColor = "";
+    option3.style.backgroundColor = "";
     // Re-enable options for the next question
     option0.disabled = false;
     option1.disabled = false;
