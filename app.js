@@ -66,7 +66,16 @@ function setQuestion() {
 }
 
 function selectOption() {
+    option0.disabled = true;
+    option1.disabled = true;
+    option2.disabled = true;
+    option3.disabled = true;
     
+    if (this.innerText === options.find(option => option.correct).text) {
+        this.style.backgroundColor = "#9aeabc";
+    } else {
+        this.style.backgroundColor = "#ff9393";
+    }
 }
 
 
