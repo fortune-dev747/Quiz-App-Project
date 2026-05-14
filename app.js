@@ -35,4 +35,7 @@ const questions = [
             { text: "Quickly find specific content or products on the website", correct: true }
         ]
     }
-]
+];
+
+const questionElement = document.getElementById("question");
+
