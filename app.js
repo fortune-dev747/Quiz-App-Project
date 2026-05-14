@@ -37,9 +37,7 @@ const questions = [
     }
 ];
 
-const questionElement = document.getElementById("question");
-const answerButtons = document.querySelectorAll(".answer-btn");
-const nextButton = document.getElementById("next-btn");
+const questionElement = document.querySelector('[data-question]');
 
 window.onload = function () {
     setQuestion();
