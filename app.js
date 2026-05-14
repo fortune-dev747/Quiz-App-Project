@@ -42,6 +42,7 @@ const option0 = document.getElementById("option0");
 const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 const option3 = document.getElementById("option3");
+const nextQuestionButton = document.getElementById("next-btn");
 
 let answers = "";
 let options = [];
@@ -52,6 +53,15 @@ window.onload = function () {
     option1.addEventListener("click", selectOption);
     option2.addEventListener("click", selectOption);
     option3.addEventListener("click", selectOption);
+    nextQuestionButton.addEventListener("click", () => {
+    // Re-enable options for the next question
+    option0.disabled = false;
+    option1.disabled = false;
+    option2.disabled = false;
+    option3.disabled = false;
+    nextQuestionButton.style.display = "none";
+    setQuestion();
+});
 }
 
 function setQuestion() {
@@ -70,13 +80,15 @@ function selectOption() {
     option1.disabled = true;
     option2.disabled = true;
     option3.disabled = true;
-    
+
     if (this.innerText === options.find(option => option.correct).text) {
         this.style.backgroundColor = "#9aeabc";
     } else {
         this.style.backgroundColor = "#ff9393";
     }
-}
+    nextQuestionButton.style.display = "block";
+};
+
 
 
 
