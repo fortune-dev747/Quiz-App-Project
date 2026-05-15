@@ -84,3 +84,10 @@ h2 {
     width: 150px;
     display: none;
 }
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(9, 20, 80);
+}
