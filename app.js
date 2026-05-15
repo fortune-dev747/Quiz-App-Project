@@ -1,3 +1,18 @@
+// Modal Popup for Quiz App
+const popup = document.getElementById("myModal");
+
+window.addEventListener('load', showPopup);
+
+function showPopup() {
+    popup.style.display = "block";
+}
+
+function closePopup() {
+    popup.style.display = "none";
+}
+
+// Quiz App Logic
+
 const questions = [
     {
         question: "1. What does HTML stand for?",
